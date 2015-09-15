@@ -9,7 +9,7 @@
 
   <body ng-controller='Filters'>
     <div class="container">
-      <h1> Angular Filters  {{1+3}}</h1>
+      <h1> Angular Filters</h1>
       <form ng-submit='kebab()'>
         <input type='text' name='kebabInput' id='kebabInput' placeholder='Enter Snake Case' ng-model='kebabInput'>
       </form>
@@ -27,12 +27,20 @@
       <br>
 
       <form ng-submit='pig()'>
-        <input type='text' name='pigInput' id='pigInput' placeholder='Enter Snake or Kebab' ng-model='pigInput'>
+        <input type='text' name='pigInput' id='pigInput' placeholder='Enter Word' ng-model='pigInput'>
       </form>
       <p>
-        Cameled: {{pigInput | pig}}
+        Pig Latin: {{pigInput | pig}}
       </p>
       <br>
+
+      <form ng-submit='redact()'>
+        <input type='text' name='redactedInput' id='redactedInput' placeholder='Enter Secret Word' ng-model='redactedInput'>
+      </form>
+      <p>
+        Redacted: {{redactedInput | redact: 'T-Ray'}}<br>
+        Redacted: {{'My Cat T-Ray is adorable.' | redact: 'T-Ray'}}
+      </p>
     </div>
 
 
